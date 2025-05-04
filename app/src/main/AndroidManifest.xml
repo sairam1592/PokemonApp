@@ -16,9 +16,8 @@
         android:theme="@style/Theme.PokemonApp"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.view.compose.MainActivity"
+            android:name=".presentation.view.MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.PokemonApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
