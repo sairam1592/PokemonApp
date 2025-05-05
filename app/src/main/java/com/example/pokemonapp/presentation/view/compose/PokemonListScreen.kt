@@ -91,9 +91,11 @@ fun PokemonList(
                     }
                 }
             }
+
+            item { Spacer(modifier = Modifier.height(25.dp)) }
         }
 
-        Spacer(modifier = Modifier.height(15.dp))
+
     }
 }
 
