@@ -2,7 +2,7 @@ package com.example.pokemonapp.di
 
 import com.example.pokemonapp.data.mapper.PokemonDetailDtoToDomainMapper
 import com.example.pokemonapp.data.mapper.PokemonSummaryListToDomainMapper
-import com.example.pokemonapp.data.repository.PokemonRepository
+import com.example.pokemonapp.domain.repository.PokemonRepository
 import com.example.pokemonapp.domain.usecase.FetchPokemonListUseCase
 import com.example.pokemonapp.domain.usecase.GetPokemonDetailUseCase
 import dagger.Module

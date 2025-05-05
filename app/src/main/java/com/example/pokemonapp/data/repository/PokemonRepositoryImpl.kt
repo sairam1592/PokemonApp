@@ -4,6 +4,7 @@ import com.example.pokemonapp.core.DispatcherProvider
 import com.example.pokemonapp.data.datasource.api.model.PokemonDetailResponseDto
 import com.example.pokemonapp.data.datasource.api.model.PokemonSummaryDto
 import com.example.pokemonapp.data.datasource.remote.RemoteDataSource
+import com.example.pokemonapp.domain.repository.PokemonRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
@@ -13,14 +14,14 @@ class PokemonRepositoryImpl @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
     private val dispatchers: DispatcherProvider
 ) : PokemonRepository {
-    override fun getAll(): Flow<List<PokemonSummaryDto>> =
+    override fun getPokemonList(): Flow<List<PokemonSummaryDto>> =
         flow {
             val dto = remoteDataSource.fetchAll()
             emit(dto.results)
         }
             .flowOn(dispatchers.io)
 
-    override fun getDetail(idOrName: String): Flow<PokemonDetailResponseDto> =
+    override fun getPokemonDetail(idOrName: String): Flow<PokemonDetailResponseDto> =
         flow {
             val detail = remoteDataSource.fetchDetail(idOrName)
             emit(detail)

@@ -4,7 +4,7 @@ import com.example.pokemonapp.core.DispatcherProvider
 import com.example.pokemonapp.data.datasource.api.ApiService
 import com.example.pokemonapp.data.datasource.remote.RemoteDataSource
 import com.example.pokemonapp.data.datasource.remote.RemoteDataSourceImpl
-import com.example.pokemonapp.data.repository.PokemonRepository
+import com.example.pokemonapp.domain.repository.PokemonRepository
 import com.example.pokemonapp.data.repository.PokemonRepositoryImpl
 import dagger.Module
 import dagger.Provides
