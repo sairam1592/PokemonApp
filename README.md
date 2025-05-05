@@ -29,6 +29,19 @@ A sample Android app showcasing Jetpack Compose, Kotlin Coroutines & Flow, Hilt 
 
 - DTO to Domain mapping is encapsulated in dedicated mapper classes, keeping data and domain layers decoupled.
 
+## DEMO VIDEO and Screenshots:
+
+https://github.com/user-attachments/assets/2d101494-3f79-4c84-b392-5c620214c7a1
+
+<img width="315" alt="Screenshot 2025-05-05 at 4 11 55 PM" src="https://github.com/user-attachments/assets/8af80c33-5dce-412b-a6c2-ddca7df1968a" />
+
+<img width="312" alt="Screenshot 2025-05-05 at 4 12 07 PM" src="https://github.com/user-attachments/assets/4460753d-7c4e-4b08-8fad-77320c67dc89" />
+
+<img width="315" alt="Screenshot 2025-05-05 at 4 11 31 PM" src="https://github.com/user-attachments/assets/8955c2d8-6498-4716-a35a-8a3f34578b12" />
+
+<img width="314" alt="Screenshot 2025-05-05 at 4 11 46 PM" src="https://github.com/user-attachments/assets/aa186343-f8d3-419a-9dc5-1f2178656f07" />
+
+
 ## What Is Missing & Why
 
 1. Retry Logic	- Not implemented, Wanted to keep focus on core MVVM, can be easily added using onRetry callback tied to ViewModel reload
