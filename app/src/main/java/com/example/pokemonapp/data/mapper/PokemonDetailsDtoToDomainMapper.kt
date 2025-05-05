@@ -10,11 +10,11 @@ import javax.inject.Inject
  */
 
 class PokemonDetailDtoToDomainMapper @Inject constructor() {
-    operator fun invoke(dto: PokemonDetailResponseDto): PokemonDetail =
+    operator fun invoke(dto: PokemonDetailResponseDto?): PokemonDetail =
         PokemonDetail(
-            id = dto.id,
-            name = dto.name.replaceFirstChar(Char::titlecase),
-            height = dto.height,
-            image = dto.sprites.front_default.orEmpty()
+            id = dto?.id ?: -1,
+            name = dto?.name?.replaceFirstChar(Char::titlecase) ?: "Unknown",
+            height = dto?.height ?: 0,
+            image = dto?.sprites?.front_default.orEmpty()
         )
 }

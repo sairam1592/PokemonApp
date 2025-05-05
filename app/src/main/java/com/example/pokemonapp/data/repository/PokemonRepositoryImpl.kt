@@ -17,14 +17,11 @@ class PokemonRepositoryImpl @Inject constructor(
     override fun getPokemonList(): Flow<List<PokemonSummaryDto>> =
         flow {
             val dto = remoteDataSource.fetchAll()
-            emit(dto.results)
-        }
-            .flowOn(dispatchers.io)
+            emit(dto?.results.orEmpty())
+        }.flowOn(dispatchers.io)
 
-    override fun getPokemonDetail(idOrName: String): Flow<PokemonDetailResponseDto> =
+    override fun getPokemonDetail(idOrName: String): Flow<PokemonDetailResponseDto?> =
         flow {
-            val detail = remoteDataSource.fetchDetail(idOrName)
-            emit(detail)
-        }
-            .flowOn(dispatchers.io)
+            emit(remoteDataSource.fetchDetail(idOrName))
+        }.flowOn(dispatchers.io)
 }

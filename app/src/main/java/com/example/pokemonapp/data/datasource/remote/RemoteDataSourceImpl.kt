@@ -9,9 +9,9 @@ class RemoteDataSourceImpl @Inject constructor(
     private val api: ApiService
 ) : RemoteDataSource {
 
-    override suspend fun fetchAll(): PokemonListResponseDto =
+    override suspend fun fetchAll(): PokemonListResponseDto? =
         api.getPokemonList()
 
-    override suspend fun fetchDetail(idOrName: String): PokemonDetailResponseDto =
+    override suspend fun fetchDetail(idOrName: String): PokemonDetailResponseDto? =
         api.getPokemonDetail(idOrName)
 }

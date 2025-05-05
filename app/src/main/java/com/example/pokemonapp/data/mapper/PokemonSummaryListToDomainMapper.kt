@@ -10,9 +10,10 @@ import javax.inject.Inject
  */
 
 class PokemonSummaryListToDomainMapper @Inject constructor() {
-    operator fun invoke(dtos: List<PokemonSummaryDto>): List<PokemonSummary> =
-        dtos.map { mapSummary(it) }
+    operator fun invoke(dtos: List<PokemonSummaryDto>?): List<PokemonSummary> =
+        dtos.orEmpty()
+            .map { dto -> mapSummary(dto) }
 
     private fun mapSummary(dto: PokemonSummaryDto): PokemonSummary =
-        PokemonSummary(name = dto.name.replaceFirstChar(Char::titlecase))
+        PokemonSummary(name = dto.name?.replaceFirstChar(Char::titlecase) ?: "Unknown")
 }
