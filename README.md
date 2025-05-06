@@ -67,3 +67,12 @@ https://github.com/user-attachments/assets/2d101494-3f79-4c84-b392-5c620214c7a1
 - Test Tags: UI test uses stable testTags for targeting UI nodes.
 
 - Flexibility: Flow-based use cases enable easy testing and recomposition.
+
+
+## Some of my Projects & Contributions for your reference:
+
+ - My Portfolio - https://bento.me/arunportfolio
+
+- A Compose Project with Firebase integration - https://github.com/sairam1592/My-Movie-Shelf-Android-App
+
+- Also recently for our Mindvalley Android app, i really enjoyed implementing a Multi tab Search feature with pagination built entirely using compose in just 3 days - Article - https://medium.com/@arundroidkl92/implementing-a-multi-tab-search-feature-in-jetpack-compose-01b8c189ed37
