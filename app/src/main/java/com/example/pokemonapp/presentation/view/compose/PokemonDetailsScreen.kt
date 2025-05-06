@@ -57,7 +57,7 @@ fun PokemonDetailView(
             TopAppBar(
                 title = {
                     Text(
-                        text = detail.name,
+                        text = detail.name.ifBlank { stringResource(R.string.unknown_pokemon) },
                         style = MaterialTheme.typography.headlineSmall
                     )
                 },
@@ -89,7 +89,7 @@ fun PokemonDetailView(
                     .clip(MaterialTheme.shapes.large)
             ) {
                 AsyncImage(
-                    model = detail.image,
+                    model = detail.image.ifBlank { R.drawable.placeholder_dummy },
                     contentDescription = stringResource(R.string.detail_image_content_desc),
                     modifier = Modifier.fillMaxSize()
                 )
@@ -97,10 +97,12 @@ fun PokemonDetailView(
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            Text(
-                text = "${stringResource(R.string.height)}: ${detail.height}",
-                style = MaterialTheme.typography.titleMedium
-            )
+            if (detail.height > 0) {
+                Text(
+                    text = "${stringResource(R.string.height)}: ${detail.height}",
+                    style = MaterialTheme.typography.titleMedium
+                )
+            }
         }
     }
 }

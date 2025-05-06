@@ -3,5 +3,6 @@
     <string name="height">Height </string>
     <string name="list_title">All Pokémon</string>
     <string name="back">Back</string>
+    <string name="unknown_pokemon">Unknown Pokémon</string>
     <string name="detail_image_content_desc">Pokémon image</string>
 </resources>

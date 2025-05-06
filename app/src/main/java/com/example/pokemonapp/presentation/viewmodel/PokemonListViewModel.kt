@@ -2,6 +2,7 @@ package com.example.pokemonapp.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.pokemonapp.common.ui.Constants
 import com.example.pokemonapp.common.ui.UiState
 import com.example.pokemonapp.core.DispatcherProvider
 import com.example.pokemonapp.core.toUiMessage
@@ -35,7 +36,13 @@ class PokemonListViewModel @Inject constructor(
             fetchListUseCase()
                 .onStart { _uiState.value = UiState.Loading }
                 .catch { e -> _uiState.value = UiState.Error(e.toUiMessage()) }
-                .collect { data -> _uiState.value = UiState.Success(data) }
+                .collect { data ->
+                    if (data.isEmpty()) {
+                        _uiState.value = UiState.Error(Constants.LIST_EMPTY_MSG)
+                    } else {
+                        _uiState.value = UiState.Success(data)
+                    }
+                }
         }
     }
 }
