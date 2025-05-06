@@ -19,6 +19,9 @@ A sample Android app showcasing Jetpack Compose, Kotlin Coroutines & Flow, Hilt 
 
 5. Error Handling: Used Throwable.toUiMessage() to convert exceptions to user-readable strings (e.g., No Internet, HTTP Error).
 
+6. Empty/Edge State UI - Show List Empty Error State and handle UI edge cases if any detail is missing.
+
+
 ### Testing:
 
 - Unit tests written for ViewModels, UseCases, Repository, and Mappers using JUnit5 + MockK.
@@ -54,7 +57,6 @@ https://github.com/user-attachments/assets/2d101494-3f79-4c84-b392-5c620214c7a1
 
 5. Auto Reload on Network Callback  - Not implemented, Could be done using ConnectivityManager or Jetpack's NetworkCallback
 
-6. Empty/Edge State UI - Not handled - No logic for empty list or detail missing scenario
 
 ## Additional Notes
 
